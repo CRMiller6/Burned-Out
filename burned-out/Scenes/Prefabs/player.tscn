@@ -35,14 +35,18 @@ one_shot = true
 wait_time = 0.12
 one_shot = true
 
-[node name="LeftHeadNudge" type="RayCast3D" parent="." unique_id=2092972496]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31433964, 0.664036, 0)
-visible = false
-target_position = Vector3(0, 0.02, 0)
-hit_from_inside = true
+[node name="RayCastTopLeft" type="RayCast3D" parent="." unique_id=982222879]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.33348727, 0.64862496, 0)
+target_position = Vector3(0, 0.08, 0)
 
-[node name="RightHeadNudge" type="RayCast3D" parent="." unique_id=1947146352]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3144422, 0.664036, 0)
-visible = false
-target_position = Vector3(0, 0.02, 0)
-hit_from_inside = true
+[node name="RayCastBottomLeft" type="RayCast3D" parent="." unique_id=589099090]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.33348727, -0.6331982, 0)
+target_position = Vector3(0, 0.08, 0)
+
+[node name="RayCastTopRight" type="RayCast3D" parent="." unique_id=1195874123]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.3295709, 0.64862496, 0)
+target_position = Vector3(0, -0.08, 0)
+
+[node name="RayCastBottomRight" type="RayCast3D" parent="." unique_id=685965862]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.3295709, -0.6331982, 0)
+target_position = Vector3(0, -0.08, 0)

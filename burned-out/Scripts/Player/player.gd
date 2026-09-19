@@ -15,6 +15,11 @@ var jump_speed: float = speed * jump_speed_multiplier
 @onready var coyote_timer: Timer = $CoyoteTimer
 
 #wall jump
+@onready var wall_detect_top_left: RayCast3D = $RayCastTopLeft
+@onready var wall_detect_bottom_left: RayCast3D = $RayCastBottomLeft
+@onready var wall_detect_top_right: RayCast3D = $RayCastTopRight
+@onready var wall_detect_bottom_right: RayCast3D = $RayCastBottomRight
+
 @export var wall_jump_pushback: float = 4
 @export var wall_slide: float = 10
 var is_wall_sliding: bool
@@ -54,48 +59,41 @@ func update_movement(delta: float) -> void:
 		current_state = State.JUMP
 		jump_buffer_timer.stop()
 		coyote_timer.stop()
-	
-	#start jump from wall
-	if (is_on_wall() && jump_buffer_timer.time_left > 0):
-		velocity.y = jump_speed
-		
 
 	#wall cling
 	if (is_on_wall()):
-		if (direction < 0): #left
-			velocity.x -= wall_jump_pushback
-		elif (direction > 0): #right
-			velocity.x += wall_jump_pushback
+		#jump from wall
+		if (jump_buffer_timer.time_left > 0):
+			velocity.x = -velocity.x * 8
+			
+			velocity.y = jump_speed
+			current_state = State.JUMP
+			jump_buffer_timer.stop()
+			coyote_timer.stop()
+		#cling to wall
+		else:
+			if ((wall_detect_top_left.collide_with_bodies || wall_detect_bottom_left.collide_with_bodies) && is_wall_sliding):
+				velocity.x -= wall_jump_pushback
+			elif ((wall_detect_top_right.collide_with_bodies || wall_detect_bottom_right.collide_with_bodies) && is_wall_sliding):
+				velocity.x += wall_jump_pushback
 	
-	#slide down wall
+	#dtermine if sliding down wall or jumping off of wall
 	if (current_state == State.JUMP):
 		is_wall_sliding = false
 		velocity.y -= gravity * delta #gravity when jumping
+	elif ((direction > 0 && velocity.x < 0) || (direction < 0 && velocity.x > 0)):
+		is_wall_sliding = false
 	elif (is_on_wall() && !is_on_floor()):
-		if (direction != 0):
-			is_wall_sliding = true
-		else:
-			is_wall_sliding = false
-	
-		if (is_wall_sliding):
-			velocity.y -= wall_slide * delta
-			velocity.y = min(velocity.y, wall_slide)
+		is_wall_sliding = true
 	else:
 		is_wall_sliding = false
 		velocity.y -= gravity * down_gravity_factor * delta #gravity when falling
-		
-	#wall slide
-	#if (is_on_wall() && !is_on_floor()):
-		#if (direction != 0):
-			#is_wall_sliding = true
-		#else:
-			#is_wall_sliding = false
-	#else:
-		#is_wall_sliding = false
-	#
-	#if (is_wall_sliding):
-		#velocity.y += wall_slide * delta
-		#velocity.y = min(velocity.y, wall_slide)
+	
+	#slow fall speed with sliding down wall
+	if (is_wall_sliding):
+		velocity.y -= wall_slide * delta
+		velocity.y = min(velocity.y, wall_slide)
+	
 
 func update_states() -> void:
 	match current_state:
