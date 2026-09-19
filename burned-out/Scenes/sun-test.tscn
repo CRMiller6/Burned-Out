@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://70tbu12p8dpm"]
+
+[ext_resource type="Script" uid="uid://uxh1chs8cv7x" path="res://Scripts/is_shadow.gd" id="1_c6lby"]
+
+[node name="SunManager" type="Node3D" unique_id=1682119510]
+script = ExtResource("1_c6lby")
+
+[node name="SunTimer" type="Timer" parent="." unique_id=1318410716]
+wait_time = 15.0
+one_shot = true
+
+[node name="MoonTimer" type="Timer" parent="." unique_id=359275951]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="SunTimer" to="." method="_on_sun_timer_timeout"]
+[connection signal="timeout" from="MoonTimer" to="." method="_on_moon_timer_timeout"]
