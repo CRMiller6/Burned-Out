@@ -13,10 +13,13 @@ config_version=5
 config/name="Burned Out"
 run/main_scene="uid://l575upxhnc45"
 config/features=PackedStringArray("4.7", "Forward Plus")
+run/max_fps=160
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -54,4 +57,5 @@ jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
