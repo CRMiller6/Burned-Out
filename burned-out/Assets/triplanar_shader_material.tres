@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cksttnauqwgva"]
+
+[ext_resource type="Shader" uid="uid://b58cd7bxffk14" path="res://Assets/triplanar_shader_material.gdshader" id="1_sgvmx"]
+[ext_resource type="Texture2D" uid="uid://cwlrmeyfhf2p8" path="res://Assets/Sprites/ConcreteTile.png" id="2_jifo0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_sgvmx")
+shader_parameter/texture_x = ExtResource("2_jifo0")
