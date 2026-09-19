@@ -15,7 +15,7 @@ var jump_speed: float = speed * jump_speed_multiplier
 @onready var coyote_timer: Timer = $CoyoteTimer
 
 #wall jump
-@export var wall_jump_pushback: float = 4000
+@export var wall_jump_pushback: float = 4
 @export var wall_slide: float = 10
 var is_wall_sliding: bool
 
