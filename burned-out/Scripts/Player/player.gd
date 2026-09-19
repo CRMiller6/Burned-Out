@@ -3,8 +3,12 @@ extends CharacterBody3D
 
 @export var speed: int  = 8
 @export var acceleration: int = 2
-@export var gravity: int = speed * 5
-var jump_speed: float = speed * 1.5
+@export var gravity: int = speed * 3
+@export var down_gravity_factor: float = 1.4
+var jump_speed: float = speed * 1.2
+
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 enum State{IDLE, WALK, JUMP, DOWN}
 var current_state: State = State.IDLE
@@ -16,9 +20,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func handle_input() -> void:
-	if (Input.is_action_just_pressed("jump") and is_on_floor()):
-		velocity.y = jump_speed
-		current_state = State.JUMP
+	if (Input.is_action_just_pressed("jump")):
+		jump_buffer_timer.start()
 	
 	var direction = Input.get_axis("walk_left", "walk_right")
 	
@@ -28,7 +31,16 @@ func handle_input() -> void:
 		velocity.x = move_toward(velocity.x, speed * direction, acceleration) #acceleration
 		
 func update_movement(delta: float) -> void:
-	velocity.y -= gravity * delta
+	if ((is_on_floor() || coyote_timer.time_left > 0) && jump_buffer_timer.time_left > 0):
+		velocity.y = jump_speed
+		current_state = State.JUMP
+		jump_buffer_timer.stop()
+		coyote_timer.stop()
+	
+	if (current_state == State.JUMP):
+		velocity.y -= gravity * delta
+	else:
+		velocity.y -= gravity * down_gravity_factor * delta 
 
 func update_states() -> void:
 	match current_state:
@@ -39,6 +51,7 @@ func update_states() -> void:
 				current_state = State.IDLE
 			if (not is_on_floor() && velocity.y > 0):
 				current_state = State.DOWN
+				coyote_timer.start()
 		State.JUMP when velocity.y > 0:
 			current_state = State.DOWN
 		State.DOWN when is_on_floor():
