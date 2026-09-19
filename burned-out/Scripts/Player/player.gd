@@ -3,12 +3,14 @@ extends CharacterBody3D
 
 @export var speed: int  = 8
 @export var acceleration: int = 2
-@export var gravity: int = speed * 3
-@export var down_gravity_factor: float = 1.4
-var jump_speed: float = speed * 1.2
+var gravity: int = speed * 3
+@export var jump_speed_multiplier: float = 1.8
+var jump_speed: float = speed * jump_speed_multiplier
+@export var down_gravity_factor: float = 1.5
 
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var camera_controller: Node3D = $CameraController
 
 enum State{IDLE, WALK, JUMP, DOWN}
 var current_state: State = State.IDLE
@@ -18,7 +20,9 @@ func _physics_process(delta: float) -> void:
 	update_movement(delta)
 	update_states()
 	move_and_slide()
+	camera_follow()
 	
+
 func handle_input() -> void:
 	if (Input.is_action_just_pressed("jump")):
 		jump_buffer_timer.start()
@@ -57,3 +61,9 @@ func update_states() -> void:
 		State.DOWN when is_on_floor():
 			if velocity.x == 0:
 				current_state = State.WALK
+
+func camera_follow():
+	camera_controller.position = lerp(camera_controller.position, position, 0.15)
+	
+	
+	

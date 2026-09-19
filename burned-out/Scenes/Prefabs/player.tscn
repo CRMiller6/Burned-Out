@@ -17,9 +17,15 @@ mesh = SubResource("PlaneMesh_klsck")
 [node name="PlayerCollisionShape" type="CollisionShape3D" parent="." unique_id=1254003636]
 shape = SubResource("BoxShape3D_klsck")
 
-[node name="PlayerCam" type="Camera3D" parent="." unique_id=930493182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6080109, 6.9012513)
+[node name="CameraController" type="Node3D" parent="." unique_id=902594191]
+top_level = true
+
+[node name="CameraTarget" type="Node3D" parent="CameraController" unique_id=301431920]
+transform = Transform3D(1, 0, 0, 0, 0.9986295, 0.05233596, 0, -0.05233596, 0.9986295, 1.0214071, 1.1764383, 10.084108)
+
+[node name="PlayerCam" type="Camera3D" parent="CameraController/CameraTarget" unique_id=930493182]
 keep_aspect = 0
+current = true
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=1406242812]
 wait_time = 0.1
