@@ -4,6 +4,9 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_klsck"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwi8l"]
+albedo_color = Color(0.49668503, 0.69, 0.40710002, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_klsck"]
 size = Vector3(0.666626, 1.333252, 0.49028015)
 
@@ -13,6 +16,7 @@ script = ExtResource("1_sfbl0")
 [node name="PlayerMeshInstance" type="MeshInstance3D" parent="." unique_id=1654829263]
 transform = Transform3D(0.33, 0, 0, 0, -4.371139e-08, -0.668, 0, 1, -2.9199207e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_klsck")
+surface_material_override/0 = SubResource("StandardMaterial3D_jwi8l")
 
 [node name="PlayerCollisionShape" type="CollisionShape3D" parent="." unique_id=1254003636]
 shape = SubResource("BoxShape3D_klsck")

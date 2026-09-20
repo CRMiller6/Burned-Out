@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://hsq8v0k6uqre"]
 
 [ext_resource type="PackedScene" uid="uid://bqkxlmboukme5" path="res://Scenes/Prefabs/player.tscn" id="1_m3j2n"]
+[ext_resource type="PackedScene" uid="uid://70tbu12p8dpm" path="res://Scenes/sun_manager.tscn" id="2_bseke"]
+[ext_resource type="PackedScene" uid="uid://bpll0g4stcvpb" path="res://Scenes/Prefabs/hp_bar.tscn" id="3_bdo1e"]
+[ext_resource type="PackedScene" uid="uid://5rlbn0abp201" path="res://Scenes/Prefabs/shield_obj.tscn" id="4_bdo1e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xmpmc"]
 
@@ -19,6 +22,12 @@ albedo_color = Color(0.941143, 0.5517657, 0.37089157, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyumh"]
 albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klsck"]
+size = Vector3(11.2, 1.4, 2.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xqmx"]
+size = Vector3(3.6000001, 1.7, 2.3)
 
 [node name="TrueLevel" type="Node3D" unique_id=436762852]
 
@@ -120,13 +129,13 @@ use_collision = true
 size = Vector3(1.8000001, 1, 2.5)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="Greybox/player_layer" unique_id=2004843550]
-transform = Transform3D(0.2626996, 0, 0, 0, 1, 0, 0, 0, 1, 13.328529, 12.294449, 0.049999952)
-size = Vector3(13.2, 1, 2.5)
+transform = Transform3D(0.2626996, 0, 0, 0, 1, 0, 0, 0, 1, 13.236585, 11.194448, 0.049999952)
+size = Vector3(10.3, 1, 2.5)
 material = SubResource("StandardMaterial3D_37io3")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="Greybox/player_layer" unique_id=1304831590]
-transform = Transform3D(0.2626996, 0, 0, 0, 4.046499, 0, 0, 0, 1, 9.96272, -4.2004557, 0.049999952)
-size = Vector3(13.2, 1, 2.5)
+transform = Transform3D(0.2626996, 0, 0, 0, 4.046499, 0, 0, 0, 1, 9.174622, -4.4027805, 0.049999952)
+size = Vector3(7.2000003, 1.3000001, 2.5)
 material = SubResource("StandardMaterial3D_37io3")
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="Greybox/player_layer" unique_id=2120325237]
@@ -140,7 +149,7 @@ size = Vector3(13.2, 1, 2.5)
 material = SubResource("StandardMaterial3D_vyumh")
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="Greybox/player_layer" unique_id=1265108435]
-transform = Transform3D(0.2626996, 0, 0, 0, 3.1744218, 0, 0, 0, 1, -4.7371235, 0.6918373, 0.049999952)
+transform = Transform3D(0.2626996, 0, 0, 0, 3.1744218, 0, 0, 0, 1, -4.7371235, 0.69183725, 0.049999952)
 size = Vector3(13.2, 1, 2.5)
 material = SubResource("StandardMaterial3D_37io3")
 
@@ -287,13 +296,14 @@ transform = Transform3D(6.834007, 0, 0, 0, 10.061115, 0, 0, 0, 1, 29.553108, 3.2
 size = Vector3(4, 1.7, 0.1)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Greybox/obstacle_layer/CSGBox3D15" unique_id=1816161072]
-transform = Transform3D(3.8182588, 0, 0, 0, -4.3711385e-08, -0.7690989, 0, 0.99999994, -3.361838e-08, -0.13466638, -0.59898204, -2.6182336e-08)
+transform = Transform3D(3.4337816, -1.7167779e-09, -0.030206589, -0.13496694, -4.3677662e-08, -0.7685054, 0, 0.9999999, -3.3618377e-08, -0.13466644, -0.5393465, 0)
 operation = 2
+sides = 12
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Greybox/obstacle_layer/CSGBox3D15" unique_id=1023813062]
-transform = Transform3D(2.5412352, 0, 0, 0, -4.3711385e-08, -0.7690989, 0, 0.99999994, -3.361838e-08, -0.13466638, 0.029828817, 1.3038592e-09)
+transform = Transform3D(2.51768, 5.9377614e-09, 0.10447452, 0.3452018, -4.3306223e-08, -0.76197, 0, 0.99999994, -3.361838e-08, -0.13466644, 0.029828846, 0)
 operation = 2
-sides = 9
+sides = 19
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Greybox/obstacle_layer" unique_id=558356393]
 transform = Transform3D(1.4647511, 0, 0, 0, 4.6339035, 0, 0, 0, 1, -9.352657, 18.051537, -1.15)
@@ -358,3 +368,42 @@ operation = 2
 size = Vector3(1.0494995, 1, 1)
 
 [node name="background_layer" type="Node3D" parent="Greybox" unique_id=207423279]
+
+[node name="SunManager" parent="." unique_id=1682119510 instance=ExtResource("2_bseke")]
+
+[node name="CanvasLayer" parent="." unique_id=382857750 instance=ExtResource("3_bdo1e")]
+
+[node name="ShieldParent" type="Node3D" parent="." unique_id=1914820536]
+
+[node name="ShieldObj" parent="ShieldParent" unique_id=839689920 instance=ExtResource("4_bdo1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1.2)
+
+[node name="ShieldObjCollisionShape" parent="ShieldParent/ShieldObj" index="1" unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5973144, -0.20195311, 1.3247534)
+shape = SubResource("BoxShape3D_klsck")
+
+[node name="ShieldObj2" parent="ShieldParent" unique_id=1989485008 instance=ExtResource("4_bdo1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, 1.4000001, -1.2)
+
+[node name="ShieldObjCollisionShape" parent="ShieldParent/ShieldObj2" index="1" unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026855469, -0.051953197, 1.3247534)
+shape = SubResource("BoxShape3D_6xqmx")
+
+[node name="ShieldObj3" parent="ShieldParent" unique_id=1267557184 instance=ExtResource("4_bdo1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.099999, 3.1000004, -1.2)
+
+[node name="ShieldObjCollisionShape" parent="ShieldParent/ShieldObj3" index="1" unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052685738, -0.051953316, 1.3247534)
+shape = SubResource("BoxShape3D_6xqmx")
+
+[node name="ShieldObj4" parent="ShieldParent" unique_id=1369781876 instance=ExtResource("4_bdo1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8, -6.299999, -1)
+
+[node name="ShieldObjCollisionShape" parent="ShieldParent/ShieldObj4" index="1" unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79731464, -0.051953316, 1.3247534)
+shape = SubResource("BoxShape3D_6xqmx")
+
+[editable path="ShieldParent/ShieldObj"]
+[editable path="ShieldParent/ShieldObj2"]
+[editable path="ShieldParent/ShieldObj3"]
+[editable path="ShieldParent/ShieldObj4"]

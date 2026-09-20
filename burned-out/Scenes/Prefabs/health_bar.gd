@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 		current_health -= sun_burn
 	
 	if (!SunManager.is_player_hidden && !SunManager.is_sun_out && current_health != max_health):
-		current_health += 1
+		current_health += 0.6
