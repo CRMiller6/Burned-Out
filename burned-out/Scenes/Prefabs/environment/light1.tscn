@@ -4,6 +4,7 @@
 
 [node name="Light" type="Sprite3D" unique_id=2097901320]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("1_t3kp2")
 
