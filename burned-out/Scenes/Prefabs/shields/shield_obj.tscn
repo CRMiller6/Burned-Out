@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://khcm6fh3f8ud" path="res://Assets/Sprites/barrel_green.png" id="2_vumn2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xqmx"]
-size = Vector3(0.65063477, 2.0097656, 3.9395752)
+size = Vector3(0.8711548, 2.0097656, 3.9395752)
 
 [node name="ShieldObj" type="Area3D" unique_id=839689920]
 script = ExtResource("1_10syx")
@@ -14,7 +14,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 texture = ExtResource("2_vumn2")
 
 [node name="ShieldObjCollisionShape" type="CollisionShape3D" parent="." unique_id=836019752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018310547, -0.001953125, 1.9747534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088500977, -0.001953125, 1.9747534)
 shape = SubResource("BoxShape3D_6xqmx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

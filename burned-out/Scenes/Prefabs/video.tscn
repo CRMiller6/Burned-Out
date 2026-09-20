@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d32nkj07ie2ku"]
 
 [ext_resource type="VideoStream" uid="uid://bv84doojvfnup" path="res://Assets/EyeAnimatic.ogv" id="1_p5sg3"]
+[ext_resource type="Script" uid="uid://co1hh66k3o1mm" path="res://Scripts/simple_pause.gd" id="1_wjo8l"]
 
 [node name="Video" type="Node2D" unique_id=472633796]
+script = ExtResource("1_wjo8l")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=638724162]
 offset_left = -955.0

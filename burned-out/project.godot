@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Burned Out"
-run/main_scene="uid://1cauot6kh0t3"
+run/main_scene="uid://dgxgwjic26b1q"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=160
 config/icon="res://icon.svg"
