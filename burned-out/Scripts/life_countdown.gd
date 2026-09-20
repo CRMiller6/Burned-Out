@@ -7,7 +7,7 @@ func _ready() -> void:
 	current_lives = total_lives
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	#see if current scene is main menu
 		#if main menu, total lives = 3

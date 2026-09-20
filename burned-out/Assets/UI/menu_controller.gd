@@ -2,17 +2,14 @@ extends Control
 
 var scene_path_to_load
 @export var pause_menu: MarginContainer
-@export var dead_menu: MarginContainer
 
-#@export var health_bar: CanvasLayer
-#var curent_health = health_bar.current_health
+@export var start_menu: MarginContainer
 
 func _ready() -> void:
-	pass
+	if get_tree().current_scene.scene_file_path == "res://Scenes/Levels/testing_greybox.tscn":
+		start_menu.visible = false
 
-func _process(delta: float) -> void:
-	#if curent_health <= 0:
-		#toggle_visibility(dead_menu)
+func _process(_delta: float) -> void:
 		pass
 	
 func toggle_visibility(object):
@@ -25,7 +22,10 @@ func _on_button_2_pressed() -> void:
 	get_tree().quit()
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/testing_greybox.tscn")
+	if get_tree().current_scene.scene_file_path == "res://Scenes/Levels/testing_greybox.tscn":
+		toggle_visibility(start_menu)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Levels/testing_greybox.tscn")
 
 func _on_button_return_pressed() -> void:
 	toggle_visibility(pause_menu)

@@ -5,6 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://dxq07pjvoxabd" path="res://Assets/UI/EyeoftheEclipse_BlueHPBar.png" id="2_cddbn"]
 [ext_resource type="FontFile" uid="uid://d28us3rlw7rbn" path="res://Assets/fonts/m3x6.ttf" id="4_cddbn"]
 [ext_resource type="Script" uid="uid://u752l3sewg1p" path="res://Scripts/life_count.gd" id="5_nny6r"]
+[ext_resource type="Script" uid="uid://bq3piqqhq40gg" path="res://Scenes/Prefabs/restart.gd" id="6_0ut3p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nny6r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0ut3p"]
 
 [node name="HealthBar" type="CanvasLayer" unique_id=382857750]
 
@@ -45,4 +50,72 @@ theme_override_font_sizes/font_size = 54
 text = "Lives Left: x3"
 script = ExtResource("5_nny6r")
 
+[node name="DeathMenu" type="MarginContainer" parent="." unique_id=1961130432]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DeathMenu" unique_id=156073354]
+layout_mode = 2
+texture = SubResource("CanvasTexture_nny6r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathMenu/NinePatchRect" unique_id=1500914848]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 200
+
+[node name="Control" type="Control" parent="DeathMenu/NinePatchRect/VBoxContainer" unique_id=871167306]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeathMenu/NinePatchRect/VBoxContainer" unique_id=123968202]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="Control" type="Control" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1397323893]
+layout_mode = 2
+script = ExtResource("6_0ut3p")
+
+[node name="Restart" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" unique_id=1490724904]
+modulate = Color(1, 0.2509804, 0.2901961, 1)
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 0
+offset_left = -700.0
+offset_right = -400.0
+offset_bottom = 200.0
+tooltip_text = "Play"
+text = "Restart
+"
+icon = SubResource("CanvasTexture_0ut3p")
+
+[node name="Quit" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" unique_id=713021224]
+modulate = Color(1, 0.2509804, 0.2901961, 1)
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 0
+offset_left = -350.0
+offset_right = -50.0
+offset_bottom = 200.0
+tooltip_text = "
+"
+text = "Quit
+"
+icon = SubResource("CanvasTexture_0ut3p")
+
 [connection signal="minus_life" from="Control/TextureProgressBar" to="Control/LifeCount" method="_on_texture_progress_bar_minus_life"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control/Restart" to="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" method="_on_restart_pressed"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control/Quit" to="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" method="_on_quit_pressed"]

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dgxgwjic26b1q"]
 
 [ext_resource type="Script" uid="uid://tily3mws7iro" path="res://Assets/UI/menu_controller.gd" id="1_spx5p"]
-[ext_resource type="PackedScene" uid="uid://bpll0g4stcvpb" path="res://Scenes/Prefabs/hp_bar.tscn" id="2_0lfj6"]
+[ext_resource type="Texture2D" uid="uid://cvl2lp0wsejqh" path="res://Assets/UI/splash_bg.png" id="2_ddgt1"]
 [ext_resource type="Texture2D" uid="uid://pby7hndnojf0" path="res://Assets/Logo/EyeoftheEclipse_LOGO.png" id="3_ddgt1"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_okqms"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_37io3"]
 
-[node name="MenuUi" type="Control" unique_id=1009809344 node_paths=PackedStringArray("pause_menu", "dead_menu")]
+[sub_resource type="CanvasTexture" id="CanvasTexture_okqms"]
+
+[node name="MenuUi" type="Control" unique_id=1009809344 node_paths=PackedStringArray("pause_menu", "start_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,12 +19,10 @@ offset_right = -14.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_spx5p")
 pause_menu = NodePath("PauseMenu")
-dead_menu = NodePath("DeathMenu")
-
-[node name="HealthBar" parent="." unique_id=382857750 instance=ExtResource("2_0lfj6")]
-visible = false
+start_menu = NodePath("StartMenu")
 
 [node name="StartMenu" type="MarginContainer" parent="." unique_id=160815248]
 layout_mode = 1
@@ -33,10 +31,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="StartMenu" unique_id=3468225]
 layout_mode = 2
-texture = SubResource("CanvasTexture_okqms")
+texture = ExtResource("2_ddgt1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/NinePatchRect" unique_id=252884647]
 layout_mode = 1
@@ -47,15 +46,18 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 400
 
 [node name="Control" type="Control" parent="StartMenu/NinePatchRect/VBoxContainer" unique_id=886481968]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="StartMenu/NinePatchRect/VBoxContainer" unique_id=2112589048]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/separation = 50
 
 [node name="Start" type="Button" parent="StartMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1025501239]
@@ -79,10 +81,12 @@ icon = SubResource("CanvasTexture_37io3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu" unique_id=1598216380]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="Control2" type="Control" parent="StartMenu/VBoxContainer" unique_id=1662788315]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="StartMenu/VBoxContainer" unique_id=1637125928]
 custom_minimum_size = Vector2(1000, 500)
@@ -95,63 +99,12 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="DeathMenu" type="MarginContainer" parent="." unique_id=1410097982]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="DeathMenu" unique_id=1379501968]
-layout_mode = 2
-texture = SubResource("CanvasTexture_okqms")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DeathMenu/NinePatchRect" unique_id=1783293635]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 200
-
-[node name="Control" type="Control" parent="DeathMenu/NinePatchRect/VBoxContainer" unique_id=1989794199]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DeathMenu/NinePatchRect/VBoxContainer" unique_id=574117491]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 50
-
-[node name="Restart" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=583593939]
-modulate = Color(1, 0.2509804, 0.2901961, 1)
-custom_minimum_size = Vector2(300, 200)
-layout_mode = 2
-tooltip_text = "Play"
-text = "Restart
-"
-icon = SubResource("CanvasTexture_37io3")
-
-[node name="Quit" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1028120638]
-modulate = Color(1, 0.2509804, 0.2901961, 1)
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-tooltip_text = "
-"
-text = "Quit
-"
-icon = SubResource("CanvasTexture_37io3")
-
 [node name="PauseMenu" type="MarginContainer" parent="." unique_id=926499872]
 visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="PauseMenu" unique_id=1104472712]
 layout_mode = 2
@@ -166,15 +119,18 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 200
 
 [node name="Control" type="Control" parent="PauseMenu/NinePatchRect2/VBoxContainer" unique_id=2140657939]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/NinePatchRect2/VBoxContainer" unique_id=595011962]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/separation = 50
 
 [node name="Return" type="Button" parent="PauseMenu/NinePatchRect2/VBoxContainer/HBoxContainer" unique_id=1110669420]
@@ -197,7 +153,5 @@ icon = SubResource("CanvasTexture_37io3")
 
 [connection signal="pressed" from="StartMenu/NinePatchRect/VBoxContainer/HBoxContainer/Start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="StartMenu/NinePatchRect/VBoxContainer/HBoxContainer/Quit" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Restart" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Quit" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="PauseMenu/NinePatchRect2/VBoxContainer/HBoxContainer/Return" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="PauseMenu/NinePatchRect2/VBoxContainer/HBoxContainer/Quit" to="." method="_on_button_2_pressed"]
