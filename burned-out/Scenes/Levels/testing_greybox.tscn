@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dbccquboe3ldf" path="res://Scenes/Prefabs/environment/plant_sprite.tscn" id="18_5cbqc"]
 [ext_resource type="PackedScene" uid="uid://cx6133spp260j" path="res://Scenes/Prefabs/environment/simple_sprite.tscn" id="19_lgr4v"]
 [ext_resource type="Texture2D" uid="uid://dismhtw3vbtf1" path="res://Assets/Sprites/RocketLauncher.png" id="20_lfbl4"]
+[ext_resource type="Script" uid="uid://cnlatrv0hj8uh" path="res://Scripts/play_movie.gd" id="21_5cbqc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kf3ho"]
 
@@ -124,7 +125,7 @@ size = Vector3(5.3, 1.5, 1.2)
 size = Vector3(25, 1, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bt07p"]
-size = Vector3(10.8, 1, 1.2)
+size = Vector3(24.9, 1, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pee7u"]
 size = Vector3(3.3, 24.2, 1.2)
@@ -196,13 +197,17 @@ size = Vector3(9, 1, 1)
 size = Vector3(6.5, 42.2, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvc11"]
-size = Vector3(1, 33.5, 1)
+size = Vector3(4.3, 41.3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_py3t7"]
 size = Vector3(4.9, 1, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5sav"]
 size = Vector3(4.9, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_klsck"]
+height = 0.47500002
+radius = 0.4
 
 [node name="TestingGreybox" type="Node3D" unique_id=2092936662]
 
@@ -892,7 +897,7 @@ mesh = SubResource("BoxMesh_lrxiy")
 surface_material_override/0 = ExtResource("6_3epa1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlayerLayer/Level1/Floor1" unique_id=442851868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55, 0, 0)
 shape = SubResource("BoxShape3D_bt07p")
 
 [node name="Level2" type="Node3D" parent="Level/PlayerLayer" unique_id=893277875]
@@ -1109,7 +1114,7 @@ mesh = SubResource("BoxMesh_5ev8y")
 surface_material_override/0 = ExtResource("6_3epa1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlayerLayer/Level3/Floor3" unique_id=860864345]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2000008, 0.2499981, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8500004, -3.6500015, 0)
 shape = SubResource("BoxShape3D_fvc11")
 
 [node name="Platform" type="StaticBody3D" parent="Level/PlayerLayer/Level3" unique_id=1772497061]
@@ -1334,7 +1339,16 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 22.800001, 3.8, -0.4)
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 21.099998, 5.5, -0.4)
 
 [node name="Sprite3D58" type="Sprite3D" parent="Level/Foreground" unique_id=1106458152]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15.7, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15.5, 0, 0)
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("20_lfbl4")
+
+[node name="Area3D" type="Area3D" parent="Level/Foreground/Sprite3D58" unique_id=1519405297]
+script = ExtResource("21_5cbqc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Foreground/Sprite3D58/Area3D" unique_id=1880236006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18750004, 0)
+shape = SubResource("CylinderShape3D_klsck")
+
+[connection signal="body_entered" from="Level/Foreground/Sprite3D58/Area3D" to="Level/Foreground/Sprite3D58/Area3D" method="_on_body_entered"]

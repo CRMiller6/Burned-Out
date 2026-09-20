@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d32nkj07ie2ku"]
+
+[ext_resource type="VideoStream" uid="uid://bv84doojvfnup" path="res://Assets/EyeAnimatic.ogv" id="1_p5sg3"]
+
+[node name="Video" type="Node2D" unique_id=472633796]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=638724162]
+offset_left = -955.0
+offset_top = -538.0
+offset_right = -101.0
+offset_bottom = -58.0
+scale = Vector2(2.2478979, 2.2478979)
+stream = ExtResource("1_p5sg3")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1417468403]
