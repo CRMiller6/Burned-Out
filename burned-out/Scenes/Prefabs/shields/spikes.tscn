@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://p440qnbm3iyo"]
+
+[ext_resource type="Texture2D" uid="uid://upqw860a0ul" path="res://Assets/Sprites/Spikes.png" id="1_quuio"]
+[ext_resource type="Script" uid="uid://bcmg5mk6ma4hp" path="res://Scripts/spikes.gd" id="2_2yig5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2yig5"]
+radius = 0.3009256
+
+[node name="Spikes" type="Area3D" unique_id=317095473]
+script = ExtResource("2_2yig5")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=580882427]
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_quuio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1665717131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.058633536, 0)
+shape = SubResource("SphereShape3D_2yig5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://u0xnky2uhbku"]
+
+[ext_resource type="PackedScene" uid="uid://5rlbn0abp201" path="res://Scenes/Prefabs/shields/shield_obj.tscn" id="1_5c8hs"]
+[ext_resource type="Texture2D" uid="uid://cageatugxtuun" path="res://Assets/Sprites/fuckelon.png" id="2_q7t65"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0awq"]
+size = Vector3(1.8034668, 1, 2.5014648)
+
+[node name="ShieldObj" unique_id=839689920 instance=ExtResource("1_5c8hs")]
+
+[node name="Sprite3D" parent="." index="0" unique_id=802896111]
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_q7t65")
+
+[node name="ShieldObjCollisionShape" parent="." index="1" unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0061035156, -0.001953125, 1.224021)
+shape = SubResource("BoxShape3D_c0awq")
