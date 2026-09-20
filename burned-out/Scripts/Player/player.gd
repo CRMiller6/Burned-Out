@@ -13,7 +13,7 @@ var jump_speed: float = speed * jump_speed_multiplier
 
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
-
+@onready var wall_stick_timer: Timer = $WallStickTimer
 #wall jump
 @onready var wall_detect_top_left: RayCast3D = $RayCastTopLeft
 @onready var wall_detect_bottom_left: RayCast3D = $RayCastBottomLeft
@@ -22,6 +22,7 @@ var jump_speed: float = speed * jump_speed_multiplier
 
 @export var wall_jump_pushback: float = 4
 @export var wall_slide: float = 10
+var is_wall_clinging: bool
 var is_wall_sliding: bool
 
 
@@ -36,6 +37,9 @@ func _physics_process(delta: float) -> void:
 	update_states()
 	move_and_slide()
 	camera_follow()
+	
+	#print("velocity.x: ", velocity.x, " velocity.y", velocity.y)
+	#print("is on wall: ", is_on_wall(), "is wall sliding:")
 	
 
 func handle_input() -> void:
@@ -60,40 +64,42 @@ func update_movement(delta: float) -> void:
 		jump_buffer_timer.stop()
 		coyote_timer.stop()
 
+#dtermine if sliding down wall or jumping off of wall
+	if (current_state == State.JUMP):
+		is_wall_clinging = false
+		is_wall_sliding = false
+		velocity.y -= gravity * delta #gravity when jumping
+	elif (is_on_wall() && !is_on_floor()):
+		is_wall_sliding = true
+	elif (is_wall_clinging && !is_on_floor):
+		is_wall_sliding = true
+	else:
+		is_wall_clinging = false
+		is_wall_sliding = false
+		velocity.y -= gravity * down_gravity_factor * delta #gravity when falling
+	
 	#wall cling
-	if (is_on_wall()):
+	if (is_wall_sliding):
+		velocity.y -= wall_slide * delta
+		velocity.y = min(velocity.y, wall_slide)
+		#cling to wall
+		if ((wall_detect_top_left.collide_with_bodies || wall_detect_bottom_left.collide_with_bodies) && is_wall_sliding):
+			is_wall_clinging = true
+			velocity.x -= wall_jump_pushback
+					
+		if ((wall_detect_top_right.collide_with_bodies || wall_detect_bottom_right.collide_with_bodies) && is_wall_sliding):
+			is_wall_clinging = true
+			velocity.x += wall_jump_pushback
+	
+	if (is_wall_clinging):
 		#jump from wall
 		if (jump_buffer_timer.time_left > 0):
-			velocity.x = -velocity.x * 8
-			
+			velocity.x = -velocity.x * 10
+
 			velocity.y = jump_speed
 			current_state = State.JUMP
 			jump_buffer_timer.stop()
 			coyote_timer.stop()
-		#cling to wall
-		else:
-			if ((wall_detect_top_left.collide_with_bodies || wall_detect_bottom_left.collide_with_bodies) && is_wall_sliding):
-				velocity.x -= wall_jump_pushback
-			elif ((wall_detect_top_right.collide_with_bodies || wall_detect_bottom_right.collide_with_bodies) && is_wall_sliding):
-				velocity.x += wall_jump_pushback
-	
-	#dtermine if sliding down wall or jumping off of wall
-	if (current_state == State.JUMP):
-		is_wall_sliding = false
-		velocity.y -= gravity * delta #gravity when jumping
-	elif ((direction > 0 && velocity.x < 0) || (direction < 0 && velocity.x > 0)):
-		is_wall_sliding = false
-	elif (is_on_wall() && !is_on_floor()):
-		is_wall_sliding = true
-	else:
-		is_wall_sliding = false
-		velocity.y -= gravity * down_gravity_factor * delta #gravity when falling
-	
-	#slow fall speed with sliding down wall
-	if (is_wall_sliding):
-		velocity.y -= wall_slide * delta
-		velocity.y = min(velocity.y, wall_slide)
-	
 
 func update_states() -> void:
 	match current_state:
@@ -112,5 +118,5 @@ func update_states() -> void:
 				current_state = State.WALK
 
 func camera_follow():
-	camera_controller.position = lerp(camera_controller.position, position, 0.15)	
+	camera_controller.position = lerp(camera_controller.position, position, 0.15)
 	

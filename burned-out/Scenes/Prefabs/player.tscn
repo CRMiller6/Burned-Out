@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_klsck"]
 size = Vector3(0.666626, 1.333252, 0.49028015)
 
-[node name="PlayerBody" type="CharacterBody3D" unique_id=21065742]
+[node name="PlayerBody" type="CharacterBody3D" unique_id=21065742 groups=["Player"]]
 script = ExtResource("1_sfbl0")
 
 [node name="PlayerMeshInstance" type="MeshInstance3D" parent="." unique_id=1654829263]
@@ -32,7 +32,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="JumpBufferTimer" type="Timer" parent="." unique_id=1711422000]
-wait_time = 0.12
+wait_time = 0.06
+one_shot = true
+
+[node name="WallStickTimer" type="Timer" parent="." unique_id=28774914]
+wait_time = 0.06
 one_shot = true
 
 [node name="RayCastTopLeft" type="RayCast3D" parent="." unique_id=982222879]

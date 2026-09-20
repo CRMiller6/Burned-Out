@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bqkxlmboukme5" path="res://Scenes/Prefabs/player.tscn" id="1_7t06c"]
 [ext_resource type="Material" uid="uid://cksttnauqwgva" path="res://Assets/triplanar_shader_material.tres" id="1_b07c4"]
+[ext_resource type="PackedScene" uid="uid://70tbu12p8dpm" path="res://Scenes/sun_manager.tscn" id="3_db73o"]
+[ext_resource type="PackedScene" uid="uid://bpll0g4stcvpb" path="res://Scenes/Prefabs/hp_bar.tscn" id="4_npfmg"]
+[ext_resource type="PackedScene" uid="uid://5rlbn0abp201" path="res://Scenes/Prefabs/shield_obj.tscn" id="5_npfmg"]
 
 [sub_resource type="Environment" id="Environment_klsck"]
 
@@ -80,5 +83,10 @@ mesh = SubResource("BoxMesh_klsck")
 
 [node name="PlayerBody" parent="." unique_id=21065742 instance=ExtResource("1_7t06c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9309597, 0)
-speed = 8
-acceleration = 2
+
+[node name="SunManager" parent="." unique_id=1682119510 instance=ExtResource("3_db73o")]
+
+[node name="CanvasLayer" parent="." unique_id=382857750 instance=ExtResource("4_npfmg")]
+
+[node name="ShieldObj" parent="." unique_id=839689920 instance=ExtResource("5_npfmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -1)
