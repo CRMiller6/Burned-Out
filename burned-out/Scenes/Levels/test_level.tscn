@@ -80,5 +80,3 @@ mesh = SubResource("BoxMesh_klsck")
 
 [node name="PlayerBody" parent="." unique_id=21065742 instance=ExtResource("1_7t06c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9309597, 0)
-speed = 8
-acceleration = 2
