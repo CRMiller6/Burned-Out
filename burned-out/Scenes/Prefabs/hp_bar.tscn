@@ -18,9 +18,15 @@ grow_vertical = 2
 size_flags_horizontal = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=997880883]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -1.225
+anchor_right = 1.0
+anchor_bottom = -1.225
 offset_right = 64.0
 offset_bottom = 128.0
+grow_horizontal = 0
 scale = Vector2(2, 2.096)
 size_flags_horizontal = 0
 size_flags_vertical = 0
