@@ -29,7 +29,3 @@ func _process(_delta: float) -> void:
 		minus_life.emit()
 		get_tree().reload_current_scene()
 	
-
-
-func _on_restart_pressed() -> void:
-	pass # Replace with function body.
