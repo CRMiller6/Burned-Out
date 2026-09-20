@@ -4,7 +4,7 @@ class_name SunManager extends Node
 @onready var moon_timer: Timer = $MoonTimer
 
 @onready var sun_animation: AnimationPlayer = $"../DirectionalLight3D/AnimationPlayer"
-
+@onready var eclipse_sprite: AnimatedSprite3D = $"../eclipse"
 
 static var is_sun_out: bool
 static var is_player_hidden: bool
@@ -28,6 +28,7 @@ func moon_phase():
 	print("night time.")
 	is_sun_out = false
 	sun_animation.play_backwards("RotateSun")
+	eclipse_sprite.play("moon_phase")
 	
 	moon_timer.start()
 
@@ -35,9 +36,6 @@ func sun_phase():
 	print("here comes the sun.")
 	is_sun_out = true
 	sun_animation.play("RotateSun")
+	eclipse_sprite.play("sun_phase")
 	
 	sun_timer.start()
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.

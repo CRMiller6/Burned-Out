@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cmki44p5k6f1k"]
+
+[ext_resource type="Texture2D" uid="uid://c1h14wmrr7ebb" path="res://Assets/SpriteSheets/MoonGodLooking.png" id="1_si7in"]
+[ext_resource type="Texture2D" uid="uid://c344jmxyepqwe" path="res://Assets/SpriteSheets/SunGodLooking.jpg" id="2_6atxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si7in"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6atxh"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e2gq"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysct1"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvxly"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qlnk"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co54h"]
+atlas = ExtResource("2_6atxh")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klsck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_si7in")
+}],
+"loop": 1,
+"name": &"moon_phase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si7in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6atxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e2gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysct1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvxly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qlnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co54h")
+}],
+"loop": 1,
+"name": &"sun_phase",
+"speed": 5.0
+}]
+
+[node name="eclipse" type="AnimatedSprite3D" unique_id=713097063]
+sprite_frames = SubResource("SpriteFrames_klsck")
+animation = &"moon_phase"

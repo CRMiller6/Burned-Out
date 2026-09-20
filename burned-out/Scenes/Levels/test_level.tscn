@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bplhilia5yhj3" path="res://Scenes/Prefabs/shields/barrel3.tscn" id="7_7rivk"]
 [ext_resource type="PackedScene" uid="uid://c1x8djrrmdpd7" path="res://Scenes/Prefabs/environment/light1.tscn" id="8_7rivk"]
 [ext_resource type="PackedScene" uid="uid://bjkqr4lp6g4qj" path="res://Scenes/Prefabs/environment/light2.tscn" id="9_hyk2w"]
+[ext_resource type="PackedScene" uid="uid://cmki44p5k6f1k" path="res://Scenes/Prefabs/eclipse.tscn" id="10_hyk2w"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5nq5d"]
 
@@ -112,7 +113,7 @@ size = Vector3(8.971741, 1, 1.9940796)
 environment = SubResource("Environment_klsck")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=69537292]
-transform = Transform3D(0.65085787, 0.7412331, -0.16418767, 0.7450788, -0.58211935, 0.3255681, 0.14574504, -0.33423135, -0.9311539, 0, 2, -6)
+transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.9311539, 0, 2, -6)
 light_color = Color(0.99, 0.7821, 0.5445, 1)
 light_specular = 6.0
 shadow_enabled = true
@@ -137,6 +138,17 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.5128095, 0.5, -0.1550000
 mesh = SubResource("BoxMesh_bdo1e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelStructure/Wall1" unique_id=1329344764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5024643, 0.5, -0.046875)
+shape = SubResource("BoxShape3D_klsck")
+
+[node name="Wall5" type="StaticBody3D" parent="LevelStructure" unique_id=1949652893]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 21.1, 3.5152338, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelStructure/Wall5" unique_id=832330815]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.5128095, 0.5, -0.15500002)
+mesh = SubResource("BoxMesh_bdo1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelStructure/Wall5" unique_id=1898360813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5024643, 0.5, -0.046875)
 shape = SubResource("BoxShape3D_klsck")
 
@@ -244,3 +256,8 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 17.3, 2.8000002, -0.4)
 
 [node name="Light3" parent="PlayerLayer" unique_id=1144886857 instance=ExtResource("9_hyk2w")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 8, 4.1000004, -0.4)
+
+[node name="eclipse" parent="." unique_id=713097063 instance=ExtResource("10_hyk2w")]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 1, 0, 0, -10)
+texture_filter = 0
+animation = &"sun_phase"
