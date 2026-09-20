@@ -165,7 +165,6 @@ environment = SubResource("Environment_bt07p")
 [node name="SunManager" parent="." unique_id=1682119510 instance=ExtResource("6_aj4aw")]
 
 [node name="DirectionalLight3D" parent="." unique_id=1409777097 instance=ExtResource("7_bt07p")]
-transform = Transform3D(0.6508578, 0.7412331, -0.16418768, 0.74507874, -0.58211935, 0.32556814, 0.14574502, -0.33423135, -0.93115395, 0, 0, 0)
 
 [node name="Greybox" type="Node3D" parent="." unique_id=928648277]
 visible = false
