@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://xmy0fjl7o14o"]
+
+[sub_resource type="Animation" id="Animation_hyk2w"]
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.99, 0.7821, 0.5445, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.33161256, -2.9670596, 2.2340214)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7rivk"]
+resource_name = "RotateSun"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1.6817932),
+"update": 0,
+"values": [Color(0.75197494, 0.82663596, 0.96484655, 1), Color(0.99, 0.7821, 0.5445, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.33161265, -1.7453294, 2.2340214), Vector3(-0.33161256, -2.9670596, 2.2340214)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 6.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyk2w"]
+_data = {
+&"RESET": SubResource("Animation_hyk2w"),
+&"RotateSun": SubResource("Animation_7rivk")
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" unique_id=1409777097]
+transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.93115383, 0, 0, 0)
+light_color = Color(0.99, 0.7821, 0.5445, 1)
+light_specular = 6.0
+shadow_enabled = true
+directional_shadow_max_distance = 184.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353274978]
+libraries/ = SubResource("AnimationLibrary_hyk2w")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqkxlmboukme5" path="res://Scenes/Prefabs/player.tscn" id="1_7t06c"]
 [ext_resource type="Material" uid="uid://cksttnauqwgva" path="res://Assets/triplanar_shader_material.tres" id="1_b07c4"]
+[ext_resource type="PackedScene" uid="uid://xmy0fjl7o14o" path="res://Scenes/Prefabs/directional_light_3d.tscn" id="1_mvu5i"]
 [ext_resource type="PackedScene" uid="uid://70tbu12p8dpm" path="res://Scenes/sun_manager.tscn" id="3_db73o"]
 [ext_resource type="PackedScene" uid="uid://bpll0g4stcvpb" path="res://Scenes/Prefabs/hp_bar.tscn" id="4_npfmg"]
 [ext_resource type="PackedScene" uid="uid://balpns7rwr82e" path="res://Scenes/Prefabs/shields/barrel1_obj.tscn" id="5_x4x4f"]
@@ -19,67 +20,6 @@ sky_material = SubResource("PhysicalSkyMaterial_5nq5d")
 [sub_resource type="Environment" id="Environment_klsck"]
 background_mode = 2
 sky = SubResource("Sky_uvpr3")
-
-[sub_resource type="Animation" id="Animation_hyk2w"]
-length = 1.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.99, 0.7821, 0.5445, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.33161256, -2.9670596, 2.2340214)]
-}
-
-[sub_resource type="Animation" id="Animation_7rivk"]
-resource_name = "RotateSun"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:light_color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1.6817932),
-"update": 0,
-"values": [Color(0.75197494, 0.82663596, 0.96484655, 1), Color(0.99, 0.7821, 0.5445, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.33161265, -1.7453294, 2.2340214), Vector3(-0.33161256, -2.9670596, 2.2340214)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyk2w"]
-_data = {
-&"RESET": SubResource("Animation_hyk2w"),
-&"RotateSun": SubResource("Animation_7rivk")
-}
 
 [sub_resource type="BoxMesh" id="BoxMesh_bdo1e"]
 material = ExtResource("1_b07c4")
@@ -112,15 +52,8 @@ size = Vector3(8.971741, 1, 1.9940796)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1906477722]
 environment = SubResource("Environment_klsck")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=69537292]
+[node name="DirectionalLight3D" parent="." unique_id=1409777097 instance=ExtResource("1_mvu5i")]
 transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.93115383, 0, 2, -6)
-light_color = Color(0.99, 0.7821, 0.5445, 1)
-light_specular = 6.0
-shadow_enabled = true
-directional_shadow_max_distance = 184.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D" unique_id=324611190]
-libraries/ = SubResource("AnimationLibrary_hyk2w")
 
 [node name="LevelStructure" type="Node3D" parent="." unique_id=236184121]
 

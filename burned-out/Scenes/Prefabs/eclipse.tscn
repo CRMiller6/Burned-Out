@@ -1,7 +1,55 @@
 [gd_scene format=3 uid="uid://cmki44p5k6f1k"]
 
-[ext_resource type="Texture2D" uid="uid://c1h14wmrr7ebb" path="res://Assets/SpriteSheets/MoonGodLooking.png" id="1_si7in"]
+[ext_resource type="Texture2D" uid="uid://pt3ry55ybgnk" path="res://Assets/SpriteSheets/MoonGodLooking.png" id="1_si7in"]
 [ext_resource type="Texture2D" uid="uid://c344jmxyepqwe" path="res://Assets/SpriteSheets/SunGodLooking.jpg" id="2_6atxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1x32"]
+atlas = ExtResource("1_si7in")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd4nn"]
+atlas = ExtResource("1_si7in")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bxdk"]
+atlas = ExtResource("1_si7in")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg6so"]
+atlas = ExtResource("1_si7in")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8v1t"]
+atlas = ExtResource("1_si7in")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7vj6"]
+atlas = ExtResource("1_si7in")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p17k3"]
+atlas = ExtResource("1_si7in")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pshw"]
+atlas = ExtResource("1_si7in")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seev7"]
+atlas = ExtResource("1_si7in")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sngoj"]
+atlas = ExtResource("1_si7in")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdrq7"]
+atlas = ExtResource("1_si7in")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5fny"]
+atlas = ExtResource("1_si7in")
+region = Rect2(1408, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_si7in"]
 atlas = ExtResource("2_6atxh")
@@ -35,7 +83,40 @@ region = Rect2(768, 0, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_si7in")
+"texture": SubResource("AtlasTexture_g1x32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd4nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bxdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg6so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8v1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7vj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p17k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pshw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seev7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sngoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdrq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5fny")
 }],
 "loop": 1,
 "name": &"moon_phase",
@@ -71,3 +152,4 @@ animations = [{
 [node name="eclipse" type="AnimatedSprite3D" unique_id=713097063]
 sprite_frames = SubResource("SpriteFrames_klsck")
 animation = &"moon_phase"
+frame_progress = 0.4759644
