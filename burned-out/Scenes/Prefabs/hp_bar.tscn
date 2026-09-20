@@ -58,6 +58,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("6_0ut3p")
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="DeathMenu" unique_id=156073354]
@@ -87,29 +88,19 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_constants/separation = 50
 
-[node name="Control" type="Control" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1397323893]
-layout_mode = 2
-script = ExtResource("6_0ut3p")
-
-[node name="Restart" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" unique_id=1490724904]
+[node name="Restart" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1490724904]
 modulate = Color(1, 0.2509804, 0.2901961, 1)
 custom_minimum_size = Vector2(300, 200)
-layout_mode = 0
-offset_left = -700.0
-offset_right = -400.0
-offset_bottom = 200.0
+layout_mode = 2
 tooltip_text = "Play"
 text = "Restart
 "
 icon = SubResource("CanvasTexture_0ut3p")
 
-[node name="Quit" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" unique_id=713021224]
+[node name="Quit" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=713021224]
 modulate = Color(1, 0.2509804, 0.2901961, 1)
 custom_minimum_size = Vector2(300, 100)
-layout_mode = 0
-offset_left = -350.0
-offset_right = -50.0
-offset_bottom = 200.0
+layout_mode = 2
 tooltip_text = "
 "
 text = "Quit
@@ -117,5 +108,5 @@ text = "Quit
 icon = SubResource("CanvasTexture_0ut3p")
 
 [connection signal="minus_life" from="Control/TextureProgressBar" to="Control/LifeCount" method="_on_texture_progress_bar_minus_life"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control/Restart" to="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" method="_on_restart_pressed"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control/Quit" to="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Control" method="_on_quit_pressed"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Restart" to="DeathMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Quit" to="DeathMenu" method="_on_quit_pressed"]
