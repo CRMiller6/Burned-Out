@@ -12,6 +12,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_0ut3p"]
 
 [node name="HealthBar" type="CanvasLayer" unique_id=382857750]
+script = ExtResource("6_0ut3p")
 
 [node name="Control" type="Control" parent="." unique_id=1626203115]
 layout_mode = 3
@@ -52,13 +53,13 @@ script = ExtResource("5_nny6r")
 
 [node name="DeathMenu" type="MarginContainer" parent="." unique_id=1961130432]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("6_0ut3p")
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="DeathMenu" unique_id=156073354]
@@ -90,6 +91,7 @@ theme_override_constants/separation = 50
 
 [node name="Restart" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=1490724904]
 modulate = Color(1, 0.2509804, 0.2901961, 1)
+top_level = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 tooltip_text = "Play"
@@ -99,6 +101,7 @@ icon = SubResource("CanvasTexture_0ut3p")
 
 [node name="Quit" type="Button" parent="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer" unique_id=713021224]
 modulate = Color(1, 0.2509804, 0.2901961, 1)
+top_level = true
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 tooltip_text = "
@@ -108,5 +111,5 @@ text = "Quit
 icon = SubResource("CanvasTexture_0ut3p")
 
 [connection signal="minus_life" from="Control/TextureProgressBar" to="Control/LifeCount" method="_on_texture_progress_bar_minus_life"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Restart" to="DeathMenu" method="_on_restart_pressed"]
-[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Quit" to="DeathMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="DeathMenu/NinePatchRect/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
