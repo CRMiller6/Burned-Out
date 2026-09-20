@@ -116,6 +116,8 @@ func update_states() -> void:
 				coyote_timer.start()
 		State.JUMP when velocity.y > 0:			#switch from jump to fall
 			current_state = State.FALLING
+		State.JUMP when is_on_floor():			#switch from jump to fall
+			current_state = State.WALK
 		State.FALLING when is_on_floor():		#switch from falling to walk
 			if velocity.x == 0:
 				current_state = State.WALK

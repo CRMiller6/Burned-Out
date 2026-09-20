@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuk5yjpsk8ppo"]
 
-[ext_resource type="PackedScene" uid="uid://cx6133spp260j" path="res://Scenes/Prefabs/simple_sprite.tscn" id="1_l751y"]
+[ext_resource type="PackedScene" uid="uid://cx6133spp260j" path="res://Scenes/Prefabs/environment/simple_sprite.tscn" id="1_l751y"]
 [ext_resource type="Texture2D" uid="uid://c80t5t5d5m68d" path="res://Assets/Sprites/Rubble.png" id="2_j73ep"]
 
 [node name="Sprite3D" unique_id=2097901320 instance=ExtResource("1_l751y")]
