@@ -150,6 +150,15 @@ func handle_animation():
 			sprite.play("Jump")
 		State.FALLING:
 			sprite.play("Fall")
+	
+	if (is_on_floor() && current_state == State.FALLING):
+		
+		if (velocity.x < 0):
+			sprite.play("Walk")
+			sprite.flip_h = true
+		elif (velocity.x > 0):
+			sprite.play("Walk")
+			sprite.flip_h = false
 
 func inventory():
 	pass

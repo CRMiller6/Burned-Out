@@ -68,6 +68,4 @@ func play_song(song_name) -> void:
 	dummy_audio.volume_db = -60
 	dummy_audio.play()
 	
-	fading = true	
-	
-	
+	fading = true
