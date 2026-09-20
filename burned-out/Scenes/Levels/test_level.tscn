@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bplhilia5yhj3" path="res://Scenes/Prefabs/shields/barrel3.tscn" id="7_7rivk"]
 [ext_resource type="PackedScene" uid="uid://c1x8djrrmdpd7" path="res://Scenes/Prefabs/environment/light1.tscn" id="8_7rivk"]
 [ext_resource type="PackedScene" uid="uid://bjkqr4lp6g4qj" path="res://Scenes/Prefabs/environment/light2.tscn" id="9_hyk2w"]
+[ext_resource type="PackedScene" uid="uid://cmki44p5k6f1k" path="res://Scenes/Prefabs/eclipse.tscn" id="10_hyk2w"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5nq5d"]
 
@@ -20,7 +21,7 @@ background_mode = 2
 sky = SubResource("Sky_uvpr3")
 
 [sub_resource type="Animation" id="Animation_hyk2w"]
-length = 0.001
+length = 1.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -48,18 +49,18 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7rivk"]
 resource_name = "RotateSun"
-length = 1.5
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:light_color")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1.6817932),
 "update": 0,
-"values": [Color(0.99, 0.7821, 0.5445, 1), Color(0.75197494, 0.82663596, 0.96484655, 1)]
+"values": [Color(0.75197494, 0.82663596, 0.96484655, 1), Color(0.99, 0.7821, 0.5445, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,10 +69,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.33161256, -2.9670596, 2.2340214), Vector3(0.027925268, 2.7925267, 2.0943952)]
+"values": [Vector3(-0.33161265, -1.7453294, 2.2340214), Vector3(-0.33161256, -2.9670596, 2.2340214)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hyk2w"]
@@ -82,7 +83,7 @@ _data = {
 
 [sub_resource type="BoxMesh" id="BoxMesh_bdo1e"]
 material = ExtResource("1_b07c4")
-size = Vector3(1, 2, 20)
+size = Vector3(1, 2, 17.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_klsck"]
 size = Vector3(5.0075226, 2, 2)
@@ -101,6 +102,7 @@ size = Vector3(2.7, 3.8, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6xqmx"]
 material = ExtResource("1_b07c4")
+size = Vector3(1, 1, 0.90000004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b07c4"]
 size = Vector3(8.971741, 1, 1.9940796)
@@ -111,10 +113,11 @@ size = Vector3(8.971741, 1, 1.9940796)
 environment = SubResource("Environment_klsck")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=69537292]
-transform = Transform3D(0.65085787, 0.7412331, -0.16418768, 0.7450788, -0.58211935, 0.32556814, 0.14574504, -0.33423135, -0.93115395, 0, 2, -6)
+transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.9311539, 0, 2, -6)
 light_color = Color(0.99, 0.7821, 0.5445, 1)
 light_specular = 6.0
 shadow_enabled = true
+directional_shadow_max_distance = 184.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D" unique_id=324611190]
 libraries/ = SubResource("AnimationLibrary_hyk2w")
@@ -131,10 +134,21 @@ libraries/ = SubResource("AnimationLibrary_hyk2w")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -5, 3.5152338, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LevelStructure/Wall1" unique_id=1870027282]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.5128095, 0.5, -0.05)
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.5128095, 0.5, -0.15500002)
 mesh = SubResource("BoxMesh_bdo1e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelStructure/Wall1" unique_id=1329344764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5024643, 0.5, -0.046875)
+shape = SubResource("BoxShape3D_klsck")
+
+[node name="Wall5" type="StaticBody3D" parent="LevelStructure" unique_id=1949652893]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 21.1, 3.5152338, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelStructure/Wall5" unique_id=832330815]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 0.1, -1.5128095, 0.5, -0.15500002)
+mesh = SubResource("BoxMesh_bdo1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelStructure/Wall5" unique_id=1898360813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5024643, 0.5, -0.046875)
 shape = SubResource("BoxShape3D_klsck")
 
@@ -177,7 +191,7 @@ shape = SubResource("BoxShape3D_f0grx")
 [node name="Floor" type="StaticBody3D" parent="LevelStructure" unique_id=540759373]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LevelStructure/Floor" unique_id=1989217240]
-transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, -0.099999964)
 mesh = SubResource("BoxMesh_6xqmx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelStructure/Floor" unique_id=780894053]
@@ -242,3 +256,8 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 17.3, 2.8000002, -0.4)
 
 [node name="Light3" parent="PlayerLayer" unique_id=1144886857 instance=ExtResource("9_hyk2w")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 8, 4.1000004, -0.4)
+
+[node name="eclipse" parent="." unique_id=713097063 instance=ExtResource("10_hyk2w")]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 1, 0, 0, -10)
+texture_filter = 0
+animation = &"sun_phase"

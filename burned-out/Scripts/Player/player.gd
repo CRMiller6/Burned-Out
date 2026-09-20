@@ -27,11 +27,20 @@ var is_wall_sliding: bool
 
 #sprite
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
-
+@onready var eclipse_sprite: AnimatedSprite3D = $"../eclipse"
 @onready var camera_controller: Node3D = $CameraController
 
 enum State{IDLE, WALK, JUMP, FALLING}
 var current_state: State = State.IDLE
+
+func _ready() -> void:
+	var viewport_size = get_viewport().size
+	eclipse_sprite.position = Vector3(viewport_size.x, viewport_size.y, -10) / 2
+	
+	var texture_size = eclipse_sprite.scale
+	
+	eclipse_sprite.scale.x = (viewport_size.x / texture_size.x)
+	eclipse_sprite.scale.y = (viewport_size.y / texture_size.y)
 
 func _physics_process(delta: float) -> void:
 	handle_input()
@@ -139,4 +148,4 @@ func handle_animation():
 
 func camera_follow():
 	camera_controller.position = lerp(camera_controller.position, position, 0.15)
-	
+	eclipse_sprite.position = Vector3(camera_controller.position.x, camera_controller.position.y, -10)
