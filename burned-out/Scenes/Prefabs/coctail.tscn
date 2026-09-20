@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bipbswcqrhwhd"]
+
+[ext_resource type="Texture2D" uid="uid://dvocfnmr0uphn" path="res://Assets/Sprites/Plant.png" id="1_6fsfq"]
+[ext_resource type="Script" uid="uid://cltaaksejoftx" path="res://Scripts/coctail.gd" id="1_yaejn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6xqmx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klsck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6fsfq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Coctail" type="Node3D" unique_id=172424230 groups=["Key"]]
+script = ExtResource("1_yaejn")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1697228198]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=110771032]
+shape = SubResource("SphereShape3D_6xqmx")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1291569074]
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_klsck")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

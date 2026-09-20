@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name  Player extends CharacterBody3D
 
 #walk direction
 var direction: float
@@ -25,6 +25,10 @@ var jump_speed: float = speed * jump_speed_multiplier
 var is_wall_clinging: bool
 var is_wall_sliding: bool
 
+#key stuff
+static var is_coctail_grabbed: bool
+static var is_key: bool 
+
 #sprite
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 @onready var eclipse_sprite: AnimatedSprite3D = $"../eclipse"
@@ -47,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	update_movement(delta)
 	update_states()
 	move_and_slide()
+	inventory()
 	handle_animation()
 	camera_follow()
 	
@@ -145,6 +150,9 @@ func handle_animation():
 			sprite.play("Jump")
 		State.FALLING:
 			sprite.play("Fall")
+
+func inventory():
+	pass
 
 func camera_follow():
 	camera_controller.position = lerp(camera_controller.position, position, 0.15)

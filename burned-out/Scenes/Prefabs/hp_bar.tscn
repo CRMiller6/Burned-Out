@@ -3,18 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://dlx5o455ttv5f" path="res://Assets/UI/EyeoftheEclipse_HPBar.png" id="1_00m6e"]
 [ext_resource type="Script" uid="uid://lbkydib1f02g" path="res://Scenes/Prefabs/health_bar.gd" id="1_5d1b5"]
 [ext_resource type="Texture2D" uid="uid://dxq07pjvoxabd" path="res://Assets/UI/EyeoftheEclipse_BlueHPBar.png" id="2_cddbn"]
+[ext_resource type="FontFile" uid="uid://d28us3rlw7rbn" path="res://Assets/fonts/m3x6.ttf" id="4_cddbn"]
+[ext_resource type="Script" uid="uid://u752l3sewg1p" path="res://Scripts/life_count.gd" id="5_nny6r"]
 
 [node name="HealthBar" type="CanvasLayer" unique_id=382857750]
 
 [node name="Control" type="Control" parent="." unique_id=1626203115]
 layout_mode = 3
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -110.0
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = -70.0
-grow_vertical = 2
+offset_bottom = 40.0
 size_flags_horizontal = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=997880883]
@@ -24,8 +22,9 @@ anchor_left = 1.0
 anchor_top = -1.225
 anchor_right = 1.0
 anchor_bottom = -1.225
+offset_top = 426.0
 offset_right = 64.0
-offset_bottom = 128.0
+offset_bottom = 554.0
 grow_horizontal = 0
 scale = Vector2(2, 2.096)
 size_flags_horizontal = 0
@@ -34,4 +33,14 @@ fill_mode = 3
 texture_under = ExtResource("1_00m6e")
 texture_progress = ExtResource("2_cddbn")
 script = ExtResource("1_5d1b5")
-metadata/_edit_use_anchors_ = true
+
+[node name="LifeCount" type="Label" parent="Control" unique_id=214903393]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("4_cddbn")
+theme_override_font_sizes/font_size = 54
+text = "Lives Left: x3"
+script = ExtResource("5_nny6r")
