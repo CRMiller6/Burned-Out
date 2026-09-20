@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dibynd2tx15qe"
-path.s3tc="res://.godot/imported/PlayerIdle-Sheet-Sheet.png-1f287da116f51d81b5c45096fc1e2f78.s3tc.ctex"
+uid="uid://clrxckorqmb53"
+path="res://.godot/imported/PlayerIdle-Sheet.png-0bb1e98990f0fa25d2d95f6070ccac44.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/PlayerIdle-Sheet-Sheet.png"
-dest_files=["res://.godot/imported/PlayerIdle-Sheet-Sheet.png-1f287da116f51d81b5c45096fc1e2f78.s3tc.ctex"]
+source_file="res://Assets/SpriteSheets/PlayerIdle-Sheet.png"
+dest_files=["res://.godot/imported/PlayerIdle-Sheet.png-0bb1e98990f0fa25d2d95f6070ccac44.ctex"]
 
 [params]
 

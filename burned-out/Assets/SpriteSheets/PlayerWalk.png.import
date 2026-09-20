@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bimf5gkt2nbk1"
-path.s3tc="res://.godot/imported/PlayerWalk.png-05d22e54753e295bb81cf2ac9960a5f7.s3tc.ctex"
+uid="uid://5nfe1e67604h"
+path="res://.godot/imported/PlayerWalk.png-05d22e54753e295bb81cf2ac9960a5f7.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
