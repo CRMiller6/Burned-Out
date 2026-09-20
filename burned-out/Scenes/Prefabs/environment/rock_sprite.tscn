@@ -4,4 +4,5 @@
 [ext_resource type="Texture2D" uid="uid://c80t5t5d5m68d" path="res://Assets/Sprites/Rubble.png" id="2_j73ep"]
 
 [node name="Sprite3D" unique_id=2097901320 instance=ExtResource("1_l751y")]
+alpha_cut = 1
 texture = ExtResource("2_j73ep")

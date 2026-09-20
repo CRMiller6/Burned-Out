@@ -11,6 +11,8 @@ script = ExtResource("1_hm1hd")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=802896111]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+alpha_cut = 1
+texture_filter = 0
 texture = ExtResource("2_2h402")
 
 [node name="ShieldObjCollisionShape" type="CollisionShape3D" parent="." unique_id=836019752]
