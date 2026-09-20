@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://1cauot6kh0t3"]
+
+[node name="TestingGreybox" type="Node3D" unique_id=2092936662]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=226333219]
+transform = Transform3D(9.6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+size = Vector3(3.3, 1.4, 2.8)
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1049872489]
+transform = Transform3D(9.6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3, 0)
+size = Vector3(3.3, 1.4, 2.8)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=1722519244]
+transform = Transform3D(-4.1962934e-07, 1, 0, -9.6, -4.371139e-08, 0, 0, 0, 1, -15.2, 8.1, 0)
+size = Vector3(1.6, 1.4, 2.8)
+
+[node name="Door" type="CSGBox3D" parent="." unique_id=1964520214]
+transform = Transform3D(-4.1962934e-07, 1, 0, -9.6, -4.371139e-08, 0, 0, 0, 1, 15.3, 11.940001, 0)
+size = Vector3(0.8, 1.4, 2.8)
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=503887364]
+transform = Transform3D(-9.6, 0, 8.742278e-08, 0, 1, 0, -8.392587e-07, 0, -1, 32.149998, 0.6999998, 2.1853692e-09)
+size = Vector3(3.3, 1.4, 2.8)
+
+[node name="Ceiling2" type="CSGBox3D" parent="." unique_id=1975396508]
+transform = Transform3D(-9.6, 0, 8.742278e-08, 0, 1, 0, -8.392587e-07, 0, -1, 32.149998, 15.3, 2.1853692e-09)
+size = Vector3(3.3, 1.4, 2.8)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=352681278]
+transform = Transform3D(4.1962934e-07, -1, 8.742278e-08, -9.6, -4.371139e-08, 0, 3.6685163e-14, -8.742278e-08, -1, 47.35, 8.1, 1.3310116e-06)
+size = Vector3(1.6, 1.4, 2.8)
+
+[node name="Door2" type="CSGBox3D" parent="." unique_id=563900024]
+transform = Transform3D(4.1962934e-07, -1, 8.742278e-08, -9.6, -4.371139e-08, 0, 3.6685163e-14, -8.742278e-08, -1, 16.849998, 11.940001, -1.335383e-06)
+size = Vector3(0.8, 1.4, 2.8)
