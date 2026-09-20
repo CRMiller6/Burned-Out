@@ -376,6 +376,13 @@ size = Vector3(1.0494995, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, -8, -0.5)
 location_a = Vector3(13.5, -8, -0.05)
 location_b = Vector3(13.5, 11, -0.5)
+location_c = Vector3(13.5, -6, -0.5)
+location_d = Vector3(13.5, 15, -0.5)
+location_e = Vector3(324, 15, -0.5)
+location_f = Vector3(6, 0, -0.5)
+location_g = Vector3(6, 0, -0.5)
+location_h = Vector3(6, 0, -0.5)
+time = 2.0
 
 [node name="SunManager" parent="." unique_id=1682119510 instance=ExtResource("2_bseke")]
 
