@@ -324,6 +324,7 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 0.9986295, 0.05233596, 0, -0.05233596, 0.9986295, 1.0214071, 1.1764383, 10.084108)
 
 [node name="PlayerCam" type="Camera3D" parent="CameraController/CameraTarget" unique_id=930493182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58521795, -4.051971)
 keep_aspect = 0
 current = true
 

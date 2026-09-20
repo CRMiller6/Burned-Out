@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjkqr4lp6g4qj"]
+
+[ext_resource type="PackedScene" uid="uid://cx6133spp260j" path="res://Scenes/Prefabs/environment/simple_sprite.tscn" id="1_x534p"]
+[ext_resource type="Texture2D" uid="uid://b8hsm2or6g0l3" path="res://Assets/Sprites/street_lamp_2.png" id="2_svev5"]
+
+[node name="Light2" unique_id=2097901320 instance=ExtResource("1_x534p")]
+texture = ExtResource("2_svev5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="0" unique_id=379142354]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.22490701, 0.44695956, 0)
+light_color = Color(0.98260266, 0.92863744, 0.6847879, 1)
+light_energy = 6.0
+shadow_enabled = true
+spot_range = 1.8000001
+spot_angle = 33.650562
