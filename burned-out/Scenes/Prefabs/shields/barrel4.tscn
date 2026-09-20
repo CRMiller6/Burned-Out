@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dguydk0icruh4"]
+
+[ext_resource type="Script" uid="uid://df5uo88l1ehob" path="res://Scripts/shield_obj.gd" id="1_hm1hd"]
+[ext_resource type="Texture2D" uid="uid://c5w85i473glmc" path="res://Assets/Sprites/barrel_white.png" id="2_2h402"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xqmx"]
+size = Vector3(0.65063477, 2.0097656, 3.9395752)
+
+[node name="ShieldObj" type="Area3D" unique_id=839689920]
+script = ExtResource("1_hm1hd")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=802896111]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+texture = ExtResource("2_2h402")
+
+[node name="ShieldObjCollisionShape" type="CollisionShape3D" parent="." unique_id=836019752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018310547, -0.001953125, 1.9747534)
+shape = SubResource("BoxShape3D_6xqmx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c1x8djrrmdpd7"]
+
+[ext_resource type="Texture2D" uid="uid://dl306xfhoke86" path="res://Assets/Sprites/street_lamp.png" id="1_t3kp2"]
+
+[node name="Light" type="Sprite3D" unique_id=2097901320]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_t3kp2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1871257741]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.22490701, 0.44695956, 0)
+light_color = Color(0.98260266, 0.92863744, 0.6847879, 1)
+light_energy = 6.0
+shadow_enabled = true
+spot_range = 1.8000001
+spot_angle = 33.650562

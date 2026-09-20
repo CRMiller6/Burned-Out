@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://khcm6fh3f8ud"
-path.s3tc="res://.godot/imported/barrel_green.png-02cda2d9d730fa226d6df849a17ca554.s3tc.ctex"
+uid="uid://brts6px2jnwyk"
+path.s3tc="res://.godot/imported/PlayerIdle.png-0c9556b6b8047d6d0e2143d1c0336a17.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/barrel_green.png"
-dest_files=["res://.godot/imported/barrel_green.png-02cda2d9d730fa226d6df849a17ca554.s3tc.ctex"]
+source_file="res://Assets/SpriteSheets/PlayerIdle.png"
+dest_files=["res://.godot/imported/PlayerIdle.png-0c9556b6b8047d6d0e2143d1c0336a17.s3tc.ctex"]
 
 [params]
 
