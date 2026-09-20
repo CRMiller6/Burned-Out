@@ -25,6 +25,8 @@ var jump_speed: float = speed * jump_speed_multiplier
 var is_wall_clinging: bool
 var is_wall_sliding: bool
 
+#sprite
+@onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 @onready var camera_controller: Node3D = $CameraController
 
@@ -36,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	update_movement(delta)
 	update_states()
 	move_and_slide()
+	handle_animation()
 	camera_follow()
 	
 	#print("velocity.x: ", velocity.x, " velocity.y", velocity.y)
@@ -116,6 +119,21 @@ func update_states() -> void:
 		State.FALLING when is_on_floor():		#switch from falling to walk
 			if velocity.x == 0:
 				current_state = State.WALK
+
+func handle_animation():
+	match current_state:
+		State.IDLE:
+			sprite.play("Idle")
+		State.WALK when velocity.x > 0:
+			sprite.play("Walk")
+			sprite.flip_h = false
+		State.WALK when velocity.x < 0:
+			sprite.play("Walk")
+			sprite.flip_h = true
+		State.JUMP:
+			sprite.play("Jump")
+		State.FALLING:
+			sprite.play("Fall")
 
 func camera_follow():
 	camera_controller.position = lerp(camera_controller.position, position, 0.15)

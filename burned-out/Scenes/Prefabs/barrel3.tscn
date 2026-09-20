@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://5rlbn0abp201"]
+[gd_scene format=3 uid="uid://bplhilia5yhj3"]
 
-[ext_resource type="Script" uid="uid://df5uo88l1ehob" path="res://Scripts/shield_obj.gd" id="1_10syx"]
-[ext_resource type="Texture2D" uid="uid://khcm6fh3f8ud" path="res://Assets/Sprites/barrel_green.png" id="2_vumn2"]
+[ext_resource type="Script" uid="uid://df5uo88l1ehob" path="res://Scripts/shield_obj.gd" id="1_bme2u"]
+[ext_resource type="Texture2D" uid="uid://i5x7fqtvuae3" path="res://Assets/Sprites/barrel_red.png" id="2_uhmfy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xqmx"]
 size = Vector3(0.65063477, 2.0097656, 3.9395752)
 
 [node name="ShieldObj" type="Area3D" unique_id=839689920]
-script = ExtResource("1_10syx")
+script = ExtResource("1_bme2u")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=802896111]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-texture = ExtResource("2_vumn2")
+texture = ExtResource("2_uhmfy")
 
 [node name="ShieldObjCollisionShape" type="CollisionShape3D" parent="." unique_id=836019752]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018310547, -0.001953125, 1.9747534)
