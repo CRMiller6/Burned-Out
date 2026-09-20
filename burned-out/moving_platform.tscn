@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bx6sqopmwi4ge"]
+
+[ext_resource type="Script" uid="uid://6c70krsypfcd" path="res://Scenes/Levels/moving_platform.gd" id="1_q06lf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k1b7n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q06lf"]
+size = Vector3(1, 1, 2)
+
+[node name="MovingPlatform" type="AnimatableBody3D" unique_id=1314630866]
+script = ExtResource("1_q06lf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=847062985]
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1432511038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1873744237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=669394743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=219051444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1036331160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+mesh = SubResource("BoxMesh_k1b7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=646647039]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1.014023, 0, 0, 0.5053668)
+shape = SubResource("BoxShape3D_q06lf")
