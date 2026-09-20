@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pt3ry55ybgnk"
-path="res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"
+uid="uid://bvg10hxwehybu"
+path="res://.godot/imported/building_1.png-133494b2a518e28703d0e7de0c200da0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/MoonGodLooking.png"
-dest_files=["res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"]
+source_file="res://Assets/Sprites/building_1.png"
+dest_files=["res://.godot/imported/building_1.png-133494b2a518e28703d0e7de0c200da0.ctex"]
 
 [params]
 

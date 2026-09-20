@@ -14,9 +14,9 @@ func _ready() -> void:
 	#for testing. Comment in normal gameplay
 	moon_phase()
 	
-func button_trigger_method_wherever() -> void:
+func reset_phase() -> void:
 	sun_timer.stop()
-	moon_timer.start()
+	moon_phase()
 	
 func _on_sun_timer_timeout() -> void: #start moon timer
 	moon_phase()

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*uid://capbtlos0irul"
+LifeCountdown="*uid://bfctxr10ecds1"
 
 [display]
 

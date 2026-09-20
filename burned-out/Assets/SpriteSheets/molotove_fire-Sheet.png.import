@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pt3ry55ybgnk"
-path="res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"
+uid="uid://dcneaheifyn6i"
+path="res://.godot/imported/molotove_fire-Sheet.png-f0a113eb0d07dd3503ae55e8dc779f28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/MoonGodLooking.png"
-dest_files=["res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"]
+source_file="res://Assets/SpriteSheets/molotove_fire-Sheet.png"
+dest_files=["res://.godot/imported/molotove_fire-Sheet.png-f0a113eb0d07dd3503ae55e8dc779f28.ctex"]
 
 [params]
 
