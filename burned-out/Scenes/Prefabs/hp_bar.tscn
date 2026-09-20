@@ -44,3 +44,5 @@ theme_override_fonts/font = ExtResource("4_cddbn")
 theme_override_font_sizes/font_size = 54
 text = "Lives Left: x3"
 script = ExtResource("5_nny6r")
+
+[connection signal="minus_life" from="Control/TextureProgressBar" to="Control/LifeCount" method="_on_texture_progress_bar_minus_life"]

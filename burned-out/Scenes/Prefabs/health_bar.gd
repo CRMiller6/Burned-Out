@@ -6,7 +6,8 @@ extends TextureProgressBar
 @export var current_health: float
 var sun_burn: float = 2
 
-signal reset_sun()
+#signal reset_sun()
+signal minus_life()
 
 func _ready():
 	current_health = max_health
@@ -25,5 +26,6 @@ func _process(_delta: float) -> void:
 	
 	if (current_health <= 0):
 		#respawn player
-		reset_sun.emit()
+		minus_life.emit()
+		get_tree().reload_current_scene()
 	

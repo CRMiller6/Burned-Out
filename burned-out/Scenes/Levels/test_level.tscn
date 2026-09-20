@@ -113,7 +113,7 @@ size = Vector3(8.971741, 1, 1.9940796)
 environment = SubResource("Environment_klsck")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=69537292]
-transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.9311539, 0, 2, -6)
+transform = Transform3D(0.6508578, 0.7412331, -0.16418767, 0.74507874, -0.58211935, 0.3255681, 0.14574502, -0.33423135, -0.93115383, 0, 2, -6)
 light_color = Color(0.99, 0.7821, 0.5445, 1)
 light_specular = 6.0
 shadow_enabled = true
