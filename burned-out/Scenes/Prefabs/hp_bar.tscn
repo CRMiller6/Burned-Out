@@ -1,36 +1,32 @@
 [gd_scene format=3 uid="uid://bpll0g4stcvpb"]
 
+[ext_resource type="Texture2D" uid="uid://dlx5o455ttv5f" path="res://Assets/UI/EyeoftheEclipse_HPBar.png" id="1_00m6e"]
 [ext_resource type="Script" uid="uid://lbkydib1f02g" path="res://Scenes/Prefabs/health_bar.gd" id="1_5d1b5"]
+[ext_resource type="Texture2D" uid="uid://dxq07pjvoxabd" path="res://Assets/UI/EyeoftheEclipse_BlueHPBar.png" id="2_cddbn"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=382857750]
+[node name="HealthBar" type="CanvasLayer" unique_id=382857750]
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=497588370]
-anchors_preset = -1
-anchor_top = 0.4722222
-anchor_right = 0.008333334
-anchor_bottom = 0.5277778
-offset_left = 41.0
-offset_top = -91.0
-offset_right = 65.0
-offset_bottom = 49.0
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-fill_mode = 3
-show_percentage = false
-script = ExtResource("1_5d1b5")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=997880883]
-visible = false
+[node name="Control" type="Control" parent="." unique_id=1626203115]
+layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -20.0
-offset_right = 80.0
-offset_bottom = 20.0
+offset_top = -110.0
+offset_right = 40.0
+offset_bottom = -70.0
 grow_vertical = 2
 size_flags_horizontal = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=997880883]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 128.0
+scale = Vector2(2, 2.096)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 value = 52.0
 fill_mode = 3
+texture_under = ExtResource("1_00m6e")
+texture_progress = ExtResource("2_cddbn")
+script = ExtResource("1_5d1b5")
+metadata/_edit_use_anchors_ = true

@@ -1,6 +1,6 @@
-extends ProgressBar
+extends TextureProgressBar
 
-@onready var sun_manager:Node3D = $"../../SunManager"
+@onready var sun_manager:Node3D = $"../../../SunManager"
 
 @export var max_health: int = 1000
 @export var current_health: int
