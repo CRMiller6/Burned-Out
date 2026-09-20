@@ -17,6 +17,9 @@ albedo_color = Color(0.2104989, 0.34840053, 0.18131757, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3j2n"]
 albedo_color = Color(0.941143, 0.5517657, 0.37089157, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyumh"]
+albedo_color = Color(1, 0, 0, 1)
+
 [node name="TrueLevel" type="Node3D" unique_id=436762852]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1398255223]
@@ -88,7 +91,30 @@ use_collision = true
 size = Vector3(13.2, 1, 2.5)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Greybox/player_layer/CSGBox3D18" unique_id=1721655486]
-transform = Transform3D(1.2051351, 0, 0, 0, 1.4470084, 0, 0, 0, 0.9990017, 0.727684, 0.11774969, 0)
+transform = Transform3D(1.2051351, 0, 0, 0, 1.4470084, 0, 0, 0, 1.2009509, 0.727684, 0.11774969, 0)
+operation = 2
+use_collision = true
+size = Vector3(1.8000001, 1, 2.5)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Greybox/player_layer" unique_id=1231253872]
+transform = Transform3D(1.8868963, 0, 0, 0, 2.9673483, 0, 0, 0, 1, 26.399265, -9.615729, 0.049999952)
+use_collision = true
+size = Vector3(13.2, 1, 2.5)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Greybox/player_layer/CSGBox3D33" unique_id=1160193387]
+transform = Transform3D(0.65198785, 0, 0, 0, 1.2897211, 0, 0, 0, 1.0847105, -0.11783545, 0.49889404, 0)
+operation = 2
+use_collision = true
+size = Vector3(1.8000001, 1, 2.5)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Greybox/player_layer/CSGBox3D33" unique_id=1738167126]
+transform = Transform3D(0.5320321, 0, 0, 0, 1.3610473, 0, 0, 0, 1.0847105, -2.9148266, 0.7576438, 0)
+operation = 2
+use_collision = true
+size = Vector3(1.8000001, 1, 2.5)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Greybox/player_layer/CSGBox3D33" unique_id=2115261387]
+transform = Transform3D(0.6937424, 0, 0, 0, 2.1877472, 0, 0, 0, 1.0847105, 4.649018, 0.7576438, 0)
 operation = 2
 use_collision = true
 size = Vector3(1.8000001, 1, 2.5)
@@ -107,6 +133,11 @@ material = SubResource("StandardMaterial3D_37io3")
 transform = Transform3D(0.13588893, 0, 0, 0, 2.2242274, 0, 0, 0, 1, 39.605904, -6.34592, 0.049999952)
 size = Vector3(13.2, 1, 2.5)
 material = SubResource("StandardMaterial3D_m3j2n")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Greybox/player_layer" unique_id=41152470]
+transform = Transform3D(2.1041377, 0, 0, 0, 3.2484715, 0, 0, 0, 1, 27.717545, -20.089315, 0.049999952)
+size = Vector3(13.2, 1, 2.5)
+material = SubResource("StandardMaterial3D_vyumh")
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="Greybox/player_layer" unique_id=1265108435]
 transform = Transform3D(0.2626996, 0, 0, 0, 3.1744218, 0, 0, 0, 1, -4.7371235, 0.6918373, 0.049999952)
@@ -248,7 +279,7 @@ transform = Transform3D(0.81538284, 0, 0, 0, 4.7940273, 0, 0, 0, 1, 23.466593, -
 size = Vector3(4, 1.7, 0.1)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Greybox/obstacle_layer" unique_id=164115391]
-transform = Transform3D(2.379458, 0, 0, 0, 3.2497344, 0, 0, 0, 1, 37.804386, -5.007048, -1.15)
+transform = Transform3D(2.635023, 0, 0, 0, 3.2497344, 0, 0, 0, 1, 35.65555, -4.776868, -1.15)
 size = Vector3(4, 1.7, 0.1)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Greybox/obstacle_layer" unique_id=1514995140]
