@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0l8amagyd307"
-path="res://.godot/imported/Player_Jump.png-8f9d5d72c885dc0c4eeac902e324937b.ctex"
+uid="uid://c1h14wmrr7ebb"
+path="res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/Player_Jump.png"
-dest_files=["res://.godot/imported/Player_Jump.png-8f9d5d72c885dc0c4eeac902e324937b.ctex"]
+source_file="res://Assets/SpriteSheets/MoonGodLooking.png"
+dest_files=["res://.godot/imported/MoonGodLooking.png-180d189877e4fcf7f7085dd1919927d6.ctex"]
 
 [params]
 

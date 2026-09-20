@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0l8amagyd307"
-path="res://.godot/imported/Player_Jump.png-8f9d5d72c885dc0c4eeac902e324937b.ctex"
+uid="uid://c344jmxyepqwe"
+path="res://.godot/imported/SunGodLooking.jpg-e3e09a2f1f6cda02ab287be0d25c01d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/Player_Jump.png"
-dest_files=["res://.godot/imported/Player_Jump.png-8f9d5d72c885dc0c4eeac902e324937b.ctex"]
+source_file="res://Assets/SpriteSheets/SunGodLooking.jpg"
+dest_files=["res://.godot/imported/SunGodLooking.jpg-e3e09a2f1f6cda02ab287be0d25c01d8.ctex"]
 
 [params]
 
