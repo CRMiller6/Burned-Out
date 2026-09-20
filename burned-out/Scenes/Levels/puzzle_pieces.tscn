@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://i3ygrguatf6i"]
+
+[ext_resource type="Script" uid="uid://6c70krsypfcd" path="res://Scenes/Levels/moving_platform.gd" id="1_4vqt4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_37io3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37io3"]
+
+[node name="PuzzlePieces" type="Node2D" unique_id=273441937]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1782833598]
+transform = Transform3D(1, 0, 0, 0, 0.97500867, 0.22216688, 0, -0.22216688, 0.97500867, 0, 1.8074679, 5.281343)
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="." unique_id=693629808]
+script = ExtResource("1_4vqt4")
+location_b = Vector3(5, 5, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform" unique_id=61983135]
+mesh = SubResource("BoxMesh_37io3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MovingPlatform" unique_id=330695601]
+shape = SubResource("BoxShape3D_37io3")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqkxlmboukme5" path="res://Scenes/Prefabs/player.tscn" id="1_m3j2n"]
 [ext_resource type="PackedScene" uid="uid://70tbu12p8dpm" path="res://Scenes/sun_manager.tscn" id="2_bseke"]
+[ext_resource type="PackedScene" uid="uid://bx6sqopmwi4ge" path="res://moving_platform.tscn" id="2_nj1df"]
 [ext_resource type="PackedScene" uid="uid://bpll0g4stcvpb" path="res://Scenes/Prefabs/hp_bar.tscn" id="3_bdo1e"]
 [ext_resource type="PackedScene" uid="uid://5rlbn0abp201" path="res://Scenes/Prefabs/shield_obj.tscn" id="4_bdo1e"]
 
@@ -368,6 +369,13 @@ operation = 2
 size = Vector3(1.0494995, 1, 1)
 
 [node name="background_layer" type="Node3D" parent="Greybox" unique_id=207423279]
+
+[node name="MovingPlatforms" type="Node3D" parent="Greybox" unique_id=734048546]
+
+[node name="MovingPlatform" parent="Greybox/MovingPlatforms" unique_id=1314630866 instance=ExtResource("2_nj1df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, -8, -0.5)
+location_a = Vector3(13.5, -8, -0.05)
+location_b = Vector3(13.5, 11, -0.5)
 
 [node name="SunManager" parent="." unique_id=1682119510 instance=ExtResource("2_bseke")]
 
