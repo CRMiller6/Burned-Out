@@ -8,11 +8,11 @@
 script = ExtResource("1_c0awq")
 
 [node name="SunTimer" type="Timer" parent="." unique_id=1318410716]
-wait_time = 15.0
+wait_time = 8.0
 one_shot = true
 
 [node name="MoonTimer" type="Timer" parent="." unique_id=359275951]
-wait_time = 0.5
+wait_time = 12.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1575343372]
